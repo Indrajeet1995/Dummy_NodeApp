@@ -25,19 +25,3 @@ spec:
             - name: MONGO_URL
               value: mongodb://mongo:27017/dev
 
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: noterontend
-  namespace: development
-spec:
-  selector:
-    app: noterontend
-    tier: frontend
-
-  ports:
-    - port: 80
-      targetPort: 3000
-      nodePort: 30000
-  type: NodePort

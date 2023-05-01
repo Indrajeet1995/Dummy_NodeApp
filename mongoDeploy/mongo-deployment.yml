@@ -32,18 +32,3 @@ spec:
       - name: "mongo-data-dir"
         persistentVolumeClaim:
           claimName: "pvc-mongo"              
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: mongo
-  namespace: development
-spec:
-  selector:
-    app: mongo
-    tier: backend
-
-  ports:
-    - port: 27017
-      targetPort: 27017
-  type: ClusterIP
